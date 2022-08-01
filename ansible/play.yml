@@ -1,0 +1,32 @@
+---
+- hosts: all
+  tasks:
+   - name: Install docker
+     apt:
+       update_cache: true
+       pkg:
+         - docker
+         - docker-compose
+
+   - name: Copy App
+     copy:
+       src: web-53
+       dest: /root/web-53
+
+   - name: Copy Dockerfile
+     copy: 
+       src: Dockerfile
+       dest: /root/Dockerfile
+
+   - name: Copy nginx config
+     copy:
+       src: proxy.conf
+       dest: /root/proxy
+
+   - name: Copy docker-compose
+     copy:
+       src: docker-compose.yml
+       dest: /root/docker-compose.yml
+
+   - name: Start app
+     shell: cd /root/; docker-compose up -d	 

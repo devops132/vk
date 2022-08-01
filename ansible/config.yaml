@@ -1,0 +1,33 @@
+---
+AWS:
+    # Region which needed for gathering information about your cloud infrastructure
+    Region: eu-central-1
+  
+# Http server configuration. You can change a listening address and post if you wish
+Server:
+    Host: 0.0.0.0
+    Port: 8080
+  
+# DynamoDB client configuration (optional)
+# Needed for dynamoDB client. If your test project doesn't include tasks for DynamoDB, you can remove this section from config.
+# If you don't configure aws client credentials, it can be cause of the long time /status request
+DynamoDB:
+    Region: eu-central-1
+    TableName: test-web-53
+    PrimaryPartitionKey: recordId
+  
+# Redis client configuration (optional)
+# If your test project doesn't include tasks for Redis, you can remove this section from config.
+Redis:
+    Host: redis
+    Port: 6379
+  
+# MySQL client configuration (optional)
+# If your test project doesn't include tasks for MySQL, you can remove this section from config.
+DB:
+    Host: database-1.c2empzdo10xn.eu-central-1.rds.amazonaws.com
+    Port: 3306
+    User: admin
+    Pass: Aa123456
+    DBName: db01
+    Table: testweb53

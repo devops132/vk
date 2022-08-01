@@ -11,7 +11,7 @@ terraform {
 provider "vkcs" {
     username   = var.user #Задается в файле terraform.tfvars
     password   = var.pass #Задается в файле terraform.tfvars
-    project_id = "1e19d04afd0a476ca0898de2b3658631"  #Настройки проекта -> Terraform
+    project_id = "affadcb918e548228c9ef20a6dee3735"  #Настройки проекта -> Terraform
   }
 
 ################################

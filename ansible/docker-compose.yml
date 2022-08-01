@@ -1,0 +1,13 @@
+version: '3'
+services:
+  nginx:
+    image: nginx
+    volumes:
+      - "/root/:/etc/nginx/sites-enabled"
+    ports:
+      - "80:80"
+  app:
+    build: .
+  redis:
+    image: redis
+
